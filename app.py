@@ -6,16 +6,17 @@ app = Flask(__name__)
 connection = sqlite3.connect("mailtrail.db")
 cursor = connection.cursor()
 
-try:
-    cursor.execute("CREATE TABLE users (username text NOT NULL, password text NOT NULL)")
-    cursor.execute("CREATE TABLE mail (id INTEGER PRIMARY KEY AUTOINCREMENT, receiver TEXT NOT NULL, sender TEXT NULL, sub TEXT NOT NULL, cnt TEXT NOT NULL)")
-except:
-    pass
-
 @app.route("/", methods=["GET", "POST"])
 def index():
     connection = sqlite3.connect("mailtrail.db")
     cursor = connection.cursor()
+
+    try:
+        cursor.execute("CREATE TABLE users (username text NOT NULL, password text NOT NULL)")
+        cursor.execute("CREATE TABLE mail (id INTEGER PRIMARY KEY AUTOINCREMENT, receiver TEXT NOT NULL, sender TEXT NULL, sub TEXT NOT NULL, cnt TEXT NOT NULL)")
+    except:
+        pass
+
     if request.method == "GET":
         return render_template("notLoggedIn.html")
     
