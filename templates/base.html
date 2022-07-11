@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} &middot; MoneyMover</title>
+    <link rel="stylesheet" href="https://nispar2009.github.io/spectrum_stylr/General/Spectrum.css">
+    <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
+    <script src="https://nispar2009.github.io/spectrum_stylr/Spectrum.js"></script>
+    <script src="/static/scripts.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="nav-desktop bg-light">
+            <a class="nav-desktop-item nav-desktop-link nav-desktop-brand" href="/">MailTrail</a>
+            <a class="nav-desktop-item nav-desktop-link" href="/">Home</a>
+            <a class="nav-desktop-item nav-desktop-link" href="/">Logout</a>
+        </div>
+    </header>
+    <br>
+    {% block body %}{% endblock %}
+    <br>
+    <footer class="footer text-center">
+        <a href="/" class="footer-link">Home</a> &middot; <a href="/login" class="footer-link">Logout</a>
+
+        <br>
+
+        &copy; 2022 MailTrail
+    </footer>
+</body>
+
+</html>

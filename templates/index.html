@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+<h1 class="text-center text-blue">Welcome to MailTrail!</h1>
+
+<table class="table-striped">
+    <tr>
+        <th>From</th>
+        <th>Subject</th>
+        <th><a href="#" onclick="setValue('toCompose', compose('{{ user[0] }}'))" class="link">Compose</a></th>
+    </tr>
+
+    {% for item in mail %}
+
+    <tr>
+        <td>{% if item[2] %}{{item[2]}}{% else %}Guest{% endif %}</td>
+        <td colspan="2"><a href="/view-mail/{{ item[0] }}" target="_blank" class="link">{{ item[3] }}</a></td>
+    </tr>
+
+    {% endfor %}
+</table>
+
+<div id="toCompose"></div>
+
+{% endblock %}

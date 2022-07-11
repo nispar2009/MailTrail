@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ mail[3] }}</title>
+    <link rel="stylesheet" href="https://nispar2009.github.io/spectrum_stylr/General/Spectrum.css">
+    <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
+    <script src="https://nispar2009.github.io/spectrum_stylr/Spectrum.js"></script>
+    <script src="/static/scripts.js"></script>
+</head>
+
+<body>
+    <p>To: {{ mail[1] }}</p>
+    <p>Fr: {% if mail[2] %}{{ mail[2] }}{% else %}Guest{% endif %}</p>
+    <p>Subject: {{ mail[3] }}</p>
+    <p>{{ mail[4] }}</p>
+</body>
+
+</html>
