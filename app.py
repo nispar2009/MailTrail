@@ -1,9 +1,10 @@
 from flask import Flask, redirect, render_template, request
 import sqlite3
+import os
 
 app = Flask(__name__)
 
-connection = sqlite3.connect("mailtrail.db")
+connection = sqlite3.connect(os.environ.get("DATABASE_URL", "mailtrail.db"))
 cursor = connection.cursor()
 
 @app.route("/", methods=["GET", "POST"])
